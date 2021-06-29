@@ -1,0 +1,48 @@
+.bottom-nav {
+    display: none;
+    z-index: 100;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    background: $color-white;
+    border-top: 1px solid $color-white;
+
+
+    @include mq('phablet') {
+        display: none !important;
+    }
+
+    .btn-mail {
+        margin-left: 5px !important;
+        padding: 5px;
+    }
+
+
+    .btn-phone img {
+        width: 15px;
+        margin-right: 5px;
+    }
+
+    .btn-phone-top {
+        font-size: 18px;
+    }
+
+    .btn-phone-btm {
+        font-size: 10px;
+    }
+
+
+
+    .btn-mail img {
+        width: 22px;
+        margin-right: 5px;
+    }
+
+    .btn-mail-text-top {
+        font-size: 16px;
+    }
+}

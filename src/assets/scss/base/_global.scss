@@ -1,0 +1,33 @@
+body {
+    font-family: $font-primary;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.2;
+    background: $color-white;
+}
+
+.container {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+
+    @include mq('phablet') {
+        padding: 0 15px;
+    }
+
+    @include mq('tablet-wide') {
+        max-width: 1024px;
+        padding: 0 15px;
+    }
+
+    @include mq('desktop') {
+        padding: 0;
+    }
+}
+
+%reset-ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

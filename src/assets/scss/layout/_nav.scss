@@ -1,0 +1,132 @@
+.nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: $color-white;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    z-index: 999;
+    transition: max-height 0.3s ease-in-out;
+
+    @include mq('tablet') {
+        display: none;
+    }
+
+    &.is-opened {
+        max-height: 1000px;
+    }
+
+    &__list {
+        width: 100%;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border-bottom: 2px solid $color-primary;
+    }
+
+    &__item {
+        border-top: 1px solid $color-primary;
+
+        &:not:last-child {
+            border-bottom: 1px solid $color-primary;
+        }
+    }
+
+    &__link {
+        display: block;
+        font-weight: 700;
+        font-size: 16px;
+        padding: 15px 25px 15px 10px;
+        color: $color-black;
+        text-decoration: none;
+        position: relative;
+
+        &:hover {
+            text-decoration: none;
+            color: $color-black;
+        }
+
+        &:after {
+            content: '';
+            background: url('../img/arrow-right.svg') center no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            width: 17px;
+            height: 17px;
+        }
+    }
+
+    &__btn-group {
+        padding: 30px 20px;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .btn-mail {
+            @include mq ('phablet', 'max') {
+                margin: 10px 0 10px 5px;
+            }
+
+        }
+    }
+
+    &__btn-group-top,
+    &__btn-group-btm {
+        display: flex;
+    }
+
+
+
+    &__phone-wrapper {
+        margin: 0 0 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-phone img {
+        width: 22px;
+        margin-right: 5px;
+    }
+
+    .btn-phone__time {
+        font-size: 14px;
+        line-height: 1.1;
+    }
+}
+
+// nav-icon
+.nav-icon {
+    width: 36px;
+
+    &:before,
+    &:after,
+    >span {
+        content: '';
+        display: block;
+        background-color: $color-primary;
+        display: block;
+        height: 4px;
+        margin: 6px 0;
+        transition: all .2s ease-in-out;
+    }
+
+    &.is-opened {
+        &:before {
+            transform: translateY(10px) rotate(135deg);
+        }
+
+        &:after {
+            transform: translateY(-10px) rotate(-135deg);
+        }
+
+        &>span {
+            transform: scale(0);
+        }
+    }
+}
